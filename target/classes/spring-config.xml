@@ -13,7 +13,7 @@
     <context:property-placeholder location="classpath:resources.properties"/>
 
     <!-- 扫描注解Bean -->
-    <context:component-scan base-package="com.github.zhangkaitao.shiro.chapter23">
+    <context:component-scan base-package="com.github.boonya.shiro.base">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -77,11 +77,11 @@
 
     <aop:config expose-proxy="true" proxy-target-class="true">
         <!-- 只对业务逻辑层实施事务 -->
-        <aop:pointcut id="txPointcut" expression="execution(* com.github.zhangkaitao.shiro.chapter16..service..*+.*(..))"/>
+        <aop:pointcut id="txPointcut" expression="execution(* com.github.boonya.shiro.base..service..*+.*(..))"/>
         <aop:advisor id="txAdvisor" advice-ref="txAdvice" pointcut-ref="txPointcut"/>
     </aop:config>
 
-    <bean class="com.github.zhangkaitao.shiro.spring.SpringUtils"/>
+    <bean class="com.github.boonya.shiro.spring.SpringUtils"/>
 
     <import resource="classpath:spring-config-shiro.xml"/>
 </beans>

@@ -140,7 +140,7 @@
             <version>0.2.23</version>
         </dependency>
 
-      <!--   <dependency>
+    <!--   <dependency>
             <groupId>com.github.zhangkaitao</groupId>
             <artifactId>shiro-example-chapter23-core</artifactId>
             <version>1.0-SNAPSHOT</version>
