@@ -49,7 +49,7 @@
     <bean id="exceptionHandlerExceptionResolver" class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver">
     </bean>
 
-    <bean class="com.github.boonya.shiro.chapter23.web.exception.DefaultExceptionHandler"/>
+    <bean class="com.github.boonya.shiro.base.web.exception.DefaultExceptionHandler"/>
 
     <import resource="spring-mvc-shiro.xml"/>
     <import resource="spring-mvc-remote-service.xml"/>
