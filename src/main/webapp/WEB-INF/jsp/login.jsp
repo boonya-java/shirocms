@@ -7,12 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Shirocms-登录</title>
-<link type="text/css" rel="stylesheet"
-	href="http://hovertree.com/texiao/jquery/13/login.css">
-<script type="text/javascript"
-	src="http://hovertree.com/ziyuan/jquery/jquery-1.11.3.min.js"></script>
-<!-- <script type="text/javascript"
-	src="http://hovertree.com/texiao/jquery/13/login.js"></script> -->
+ <style>.error{color:red;}</style>
+<link type="text/css" rel="stylesheet" href="http://hovertree.com/texiao/jquery/13/login.css">
+<script type="text/javascript" src="http://hovertree.com/ziyuan/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="http://hovertree.com/texiao/jquery/13/login.js"></script>
 </head>
 <body style="overflow: hidden">
 	<div class="pagewrap">
@@ -53,17 +51,18 @@
 
 
 						<li class="con_r_right" style="display: block;">
-							<form name="form1" method="post"
-								action="${pageContext.request.contextPath}/login" autocomplete="off">
+							<form name="form1" method="post" action="${pageContext.request.contextPath}/login" autocomplete="off">
 								<div class="user">
 									<div>
-										<span class="user-icon"></span> <input type="text" id="username"
-											name="username" placeholder="　输入账号" value="">
+										<span class="user-icon"></span> <input type="text" id="userid"
+											name="username" placeholder="　输入账号" value="<shiro:principal/>" />
+											
 									</div>
 
 									<div>
 										<span class="mima-icon"></span> <input type="password"
-											id="password" name="password" placeholder="　输入密码" value="">
+											id="pwd" name="password" placeholder="　输入密码" value="">
+											
 									</div>
 
 									<div>
@@ -77,9 +76,10 @@
 											src="http://hovertree.com/texiao/jquery/13/hovertreecheckcode.gif">
 									</div>
 									
-								<!-- 	<div>自动登录：<input type="checkbox" name="rememberMe" value="true"/></div> -->
+								<div style="display: none;">自动登录：<input type="checkbox" name="rememberMe" value="true"/></div> 
 
 								</div>
+								<div class="error" align="center">${error}</div>
 								<br>
 								<button id="btn_Login" type="submit">登 录</button>
 							</form>
@@ -91,6 +91,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="error">${error}</div>
+	
 </body>
 </html>
