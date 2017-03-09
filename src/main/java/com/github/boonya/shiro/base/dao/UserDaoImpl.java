@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
     private JdbcTemplate jdbcTemplate;
     
     public User createUser(final User user) {
-        final String sql = "insert into sys_user(organization_id, username, password, salt, locked) values(?,?,?,?,?,?)";
+        final String sql = "insert into sys_user(organization_id, username, password, salt, locked) values(?,?,?,?,?)";
 
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
