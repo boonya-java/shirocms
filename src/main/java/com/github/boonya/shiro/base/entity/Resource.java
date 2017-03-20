@@ -19,7 +19,7 @@ public class Resource implements Serializable {
     private Boolean available = Boolean.FALSE;
 
     public static enum ResourceType {
-       category("分类"), menu("菜单"), button("按钮");
+       root("根路径"),category("分类"), menu("菜单"), button("按钮");
 
         private final String info;
         private ResourceType(String info) {

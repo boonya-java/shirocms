@@ -6,11 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.github.boonya.shiro.base.Constants;
-import com.github.boonya.shiro.base.entity.Resource;
 import com.github.boonya.shiro.base.service.AuthorizationService;
 import com.github.boonya.shiro.base.service.ResourceService;
 import com.github.boonya.shiro.base.web.bind.annotation.CurrentUser;
+
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -29,8 +30,10 @@ public class IndexController {
     @RequestMapping("/")
     public String index(@CurrentUser com.github.boonya.shiro.base.entity.User loginUser, Model model) {
         Set<String> permissions = authorizationService.findPermissions(Constants.SERVER_APP_KEY, loginUser.getUsername());
-        List<Resource> menus = resourceService.findMenus(permissions);
-        model.addAttribute("menus", menus);
+       /* List<Resource> menus = resourceService.findMenus(permissions);
+        model.addAttribute("menus", menus);*/
+        List<Map<String,Object>> categoryMenus = resourceService.findCategoryMenus(permissions);
+        model.addAttribute("categoryMenus", categoryMenus);
         return "index";
     }
 

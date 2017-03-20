@@ -34,72 +34,19 @@
 	</div>
 	<div class="ui-layout-west" title="功能菜单">
 	    <div id="accordion">
-	       
+	        <c:forEach items="${categoryMenus}" var="c"> 
 		     <div class="group">
 			     <h3>
-			                   系统管理
+			         ${c.categroy}
 			     </h3>
 				     <div>
-				        <c:forEach items="${menus}" var="m"> 
+				        <c:forEach items="${c.menus}" var="m"> 
 					       <a href="${pageContext.request.contextPath}${m.url}" target="content">${m.name}</a><br/><br/>
 					    </c:forEach>
 				    </div>
 			</div>
+			</c:forEach>
 			
-			<div class="group">
-			     <h3>
-			                   基础管理
-			     </h3>
-				     <div>
-				        <c:forEach items="${menus}" var="m"> 
-					       <a href="${pageContext.request.contextPath}${m.url}" target="content">${m.name}</a><br/><br/>
-					    </c:forEach>
-				    </div>
-			</div>
-			
-			<div class="group">
-			     <h3>
-			                   商品管理
-			     </h3>
-				     <div>
-				        <c:forEach items="${menus}" var="m"> 
-					       <a href="${pageContext.request.contextPath}${m.url}" target="content">${m.name}</a><br/><br/>
-					    </c:forEach>
-				    </div>
-			</div>
-			
-			<div class="group">
-			     <h3>
-			                   广告管理
-			     </h3>
-				     <div>
-				        <c:forEach items="${menus}" var="m"> 
-					       <a href="${pageContext.request.contextPath}${m.url}" target="content">${m.name}</a><br/><br/>
-					    </c:forEach>
-				    </div>
-			</div>
-		   
-		   <div class="group">
-			     <h3>
-			                   支付管理
-			     </h3>
-				     <div>
-				        <c:forEach items="${menus}" var="m"> 
-					       <a href="${pageContext.request.contextPath}${m.url}" target="content">${m.name}</a><br/><br/>
-					    </c:forEach>
-				    </div>
-			</div>
-			
-			  <div class="group">
-			     <h3>
-			                   订单管理
-			     </h3>
-				     <div>
-				        <c:forEach items="${menus}" var="m"> 
-					       <a href="${pageContext.request.contextPath}${m.url}" target="content">${m.name}</a><br/><br/>
-					    </c:forEach>
-				    </div>
-			</div>
 		</div>
 	</div>
 

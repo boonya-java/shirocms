@@ -1,6 +1,7 @@
 package com.github.boonya.shiro.base.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import com.github.boonya.shiro.base.entity.Resource;
@@ -19,6 +20,7 @@ public interface ResourceService {
 
     Resource findOne(Long resourceId);
     List<Resource> findAll();
+    List<Resource> findAllCategory();
 
     /**
      * 得到资源对应的权限字符串
@@ -33,4 +35,11 @@ public interface ResourceService {
      * @return
      */
     List<Resource> findMenus(Set<String> permissions);
+    
+    /**
+     * 根据用户权限得到分类菜单
+     * @param permissions
+     * @return
+     */
+    List<Map<String,Object>>  findCategoryMenus(Set<String> permissions);
 }
