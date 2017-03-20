@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Resource implements Serializable {
     private Long id; //编号
     private String name; //资源名称
-    private ResourceType type = ResourceType.categry; //资源类型
+    private ResourceType type = ResourceType.category; //资源类型
     private String url; //资源路径
     private String permission; //权限字符串
     private Long parentId; //父编号
@@ -19,7 +19,7 @@ public class Resource implements Serializable {
     private Boolean available = Boolean.FALSE;
 
     public static enum ResourceType {
-       categry("分类"), menu("菜单"), button("按钮");
+       category("分类"), menu("菜单"), button("按钮");
 
         private final String info;
         private ResourceType(String info) {
