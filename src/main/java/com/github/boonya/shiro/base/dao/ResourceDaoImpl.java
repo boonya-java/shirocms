@@ -77,7 +77,7 @@ public class ResourceDaoImpl implements ResourceDao {
 
     @Override
     public List<Resource> findAllCategrory() {
-        final String sql = "select id, name, type, url, permission, parent_id, parent_ids, available from sys_resource where type='category' order by id asc";
+        final String sql = "select id, name, type, url, permission, parent_id, parent_ids, available from sys_resource where type='category' and available=1 order by id asc";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper(Resource.class));
     }
     
