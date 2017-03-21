@@ -27,7 +27,7 @@ public class Producer {
 		 */
 		final DefaultMQProducer producer = new DefaultMQProducer(
 				"ProducerGroupName");
-		producer.setNamesrvAddr("localhost:9876");
+		producer.setNamesrvAddr("192.168.234.128:9876");
 		producer.setInstanceName("Producer");
 
 		/**
